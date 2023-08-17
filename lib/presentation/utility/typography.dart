@@ -46,7 +46,7 @@ class HeaderTextStyle {
   }) {
     return TextStyle(
         color: color ?? ColorTheme.black,
-        fontSize: fontSize ?? StandardFontSize.bodyTextXl,
+        fontSize: fontSize ?? StandardFontSize.h3,
         fontWeight: fontWeight ?? StandardFontWeight.bold);
   }
 }
