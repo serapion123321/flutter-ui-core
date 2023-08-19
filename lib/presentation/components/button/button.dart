@@ -6,6 +6,13 @@ enum IconPosition{
   left, right
 }
 
+enum ButtonSize{
+  fullWidth,
+  large,
+  medium,
+  small,
+}
+
 class StandardButton {
   Widget primaryButton({
     required title,
@@ -21,6 +28,7 @@ class StandardButton {
     Color? disabledSplashColor,
     Color? borderColor,
     Color? disabledBorderColor,
+    Color? loadingColor,
     Function()? onTap,
     IconPosition? iconPosition,
     Widget? icon
@@ -47,7 +55,9 @@ class StandardButton {
                     : borderColor ?? ColorTheme.primary500
             )
           ),
-          child: isLoading ? loadingChildContainer() : childContainerWidget(
+          child: isLoading ? loadingChildContainer(
+            loadingColor: loadingColor ?? ColorTheme.primary500
+          ) : childContainerWidget(
             iconPosition: iconPosition ?? IconPosition.left,
             body: standardBodyText(
                 text: title,
@@ -90,7 +100,11 @@ class StandardButton {
     }
   }
 
-  Widget loadingChildContainer(){
-    return const CircularProgressIndicator();
+  Widget loadingChildContainer({
+  required Color? loadingColor,
+  }){
+    return CircularProgressIndicator(
+      color: loadingColor,
+    );
   }
 }
