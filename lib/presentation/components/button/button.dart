@@ -56,6 +56,7 @@ class StandardButton {
     } else {
       if(iconPosition == IconPosition.left){
         return Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             icon,
             body,
@@ -63,6 +64,7 @@ class StandardButton {
         );
       } else {
         return Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             body,
             icon,
