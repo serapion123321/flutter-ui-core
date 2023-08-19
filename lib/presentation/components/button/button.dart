@@ -38,7 +38,8 @@ class StandardButton {
           ),
           child: childContainerWidget(
             iconPosition: iconPosition ?? IconPosition.left,
-            body: standardBodyText(text: title, color: titleColor ?? ColorTheme.black)
+            body: standardBodyText(text: title, color: titleColor ?? ColorTheme.black),
+            icon: icon
           )
         ),
       ),
