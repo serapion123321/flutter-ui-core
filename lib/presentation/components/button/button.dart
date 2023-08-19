@@ -23,6 +23,7 @@ class StandardButton {
     return Material(
       color: backgroundColor ?? ColorTheme.primary700,
       elevation: elevation ?? 1,
+      borderRadius: BorderRadius.circular(borderRadius ?? 12),
       child: InkWell(
         splashColor: splashColor ?? ColorTheme.white,
         borderRadius: BorderRadius.circular(borderRadius ?? 12),
