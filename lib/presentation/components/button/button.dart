@@ -28,6 +28,7 @@ class StandardButton {
         borderRadius: BorderRadius.circular(borderRadius ?? 12),
         onTap: onTap,
         child: Container(
+          alignment: Alignment.center,
           width: Get.width,
           padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
           decoration: BoxDecoration(
