@@ -11,21 +11,28 @@ class StandardButton {
     required title,
     double? borderRadius,
     double? elevation,
-    bool? isLoading,
-    bool? isDisabled,
+    bool? isLoading = false,
+    bool isDisabled = false,
     Color? backgroundColor,
+    Color? disabledBackgroundColor,
     Color? titleColor,
+    Color? disabledTitleColor,
     Color? splashColor,
+    Color? disabledSplashColor,
+    Color? borderColor,
+    Color? disabledBorderColor,
     Function()? onTap,
     IconPosition? iconPosition,
     Widget? icon
   }) {
     return Material(
-      color: backgroundColor ?? ColorTheme.primary700,
+      color: isDisabled
+          ? disabledBackgroundColor ?? ColorTheme.grey700
+          : backgroundColor ?? ColorTheme.primary700,
       elevation: elevation ?? 1,
       borderRadius: BorderRadius.circular(borderRadius ?? 12),
       child: InkWell(
-        splashColor: splashColor ?? ColorTheme.white,
+        splashColor: isDisabled ? Colors.transparent : splashColor ?? ColorTheme.white,
         borderRadius: BorderRadius.circular(borderRadius ?? 12),
         onTap: onTap,
         child: Container(
@@ -34,11 +41,20 @@ class StandardButton {
           padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(borderRadius ?? 12),
-            border: Border.all(color: ColorTheme.primary500)
+            border: Border.all(
+                color: isDisabled
+                    ? disabledBorderColor ?? ColorTheme.black
+                    : borderColor ?? ColorTheme.primary500
+            )
           ),
           child: childContainerWidget(
             iconPosition: iconPosition ?? IconPosition.left,
-            body: standardBodyText(text: title, color: titleColor ?? ColorTheme.black),
+            body: standardBodyText(
+                text: title,
+                color: isDisabled
+                    ? disabledTitleColor ?? ColorTheme.black
+                    : titleColor ?? ColorTheme.black
+            ),
             icon: icon
           )
         ),
