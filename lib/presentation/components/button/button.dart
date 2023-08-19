@@ -11,7 +11,7 @@ class StandardButton {
     required title,
     double? borderRadius,
     double? elevation,
-    bool? isLoading = false,
+    bool isLoading = false,
     bool isDisabled = false,
     Color? backgroundColor,
     Color? disabledBackgroundColor,
@@ -47,7 +47,7 @@ class StandardButton {
                     : borderColor ?? ColorTheme.primary500
             )
           ),
-          child: childContainerWidget(
+          child: isLoading ? loadingChildContainer() : childContainerWidget(
             iconPosition: iconPosition ?? IconPosition.left,
             body: standardBodyText(
                 text: title,
@@ -88,5 +88,9 @@ class StandardButton {
         );
       }
     }
+  }
+
+  Widget loadingChildContainer(){
+    return const CircularProgressIndicator();
   }
 }
