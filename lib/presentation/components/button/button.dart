@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_core/presentation/utility/utility.dart';
+import 'package:get/get.dart';
 
 enum IconPosition{
   left, right
@@ -27,10 +28,44 @@ class StandardButton {
         borderRadius: BorderRadius.circular(borderRadius ?? 12),
         onTap: onTap,
         child: Container(
+          width: Get.width,
           padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-          child: standardBodyText(text: title),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(borderRadius ?? 12),
+            border: Border.all(color: ColorTheme.primary500)
+          ),
+          child: childContainerWidget(
+            iconPosition: iconPosition ?? IconPosition.left,
+            body: standardBodyText(text: title, color: titleColor ?? ColorTheme.black)
+          )
         ),
       ),
     );
+  }
+
+  Widget childContainerWidget({
+  required IconPosition iconPosition,
+  required Widget body,
+  Widget? icon
+  }) {
+    if(icon == null){
+      return body;
+    } else {
+      if(iconPosition == IconPosition.left){
+        return Row(
+          children: [
+            icon,
+            body,
+          ],
+        );
+      } else {
+        return Row(
+          children: [
+            body,
+            icon,
+          ],
+        );
+      }
+    }
   }
 }
