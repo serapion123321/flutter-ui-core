@@ -13,9 +13,36 @@ enum ButtonSize{
   small,
 }
 
+double funcButtonSizeConverter(ButtonSize buttonSize) {
+  switch (buttonSize) {
+    case ButtonSize.fullWidth:
+      return Get.width;
+    case ButtonSize.large:
+      return Get.width / 0.75;
+    case ButtonSize.medium:
+      return Get.width / 0.50;
+    case ButtonSize.small:
+      return Get.width / 0.25;
+  }
+}
+
+double funcFontSizeConverter(ButtonSize buttonSize){
+  switch (buttonSize) {
+    case ButtonSize.fullWidth:
+      return StandardFontSize.h3;
+    case ButtonSize.large:
+      return StandardFontSize.h4;
+    case ButtonSize.medium:
+      return StandardFontSize.h5;
+    case ButtonSize.small:
+      return StandardFontSize.h6;
+  }
+}
+
 class StandardButton {
   Widget primaryButton({
     required title,
+    ButtonSize? buttonSize,
     double? borderRadius,
     double? elevation,
     bool isLoading = false,
@@ -45,7 +72,7 @@ class StandardButton {
         onTap: onTap,
         child: Container(
           alignment: Alignment.center,
-          width: Get.width,
+          width: funcButtonSizeConverter(buttonSize ?? ButtonSize.fullWidth),
           padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(borderRadius ?? 12),
@@ -59,7 +86,8 @@ class StandardButton {
             loadingColor: loadingColor ?? ColorTheme.primary500
           ) : childContainerWidget(
             iconPosition: iconPosition ?? IconPosition.left,
-            body: standardBodyText(
+            body: standardHeaderText(
+                fontSize: funcFontSizeConverter(buttonSize ?? ButtonSize.fullWidth),
                 text: title,
                 color: isDisabled
                     ? disabledTitleColor ?? ColorTheme.black
