@@ -104,7 +104,7 @@ class StandardButton {
                 height: funcLoadingSizeConverter(buttonSize ?? ButtonSize.fullWidth),
                 width: funcLoadingSizeConverter(buttonSize ?? ButtonSize.fullWidth),
                 child:  CircularProgressIndicator(
-                  color: loadingColor,
+                  color: loadingColor ?? titleColor ?? ColorTheme.black,
                 ),
               )
             ) : childContainerWidget(
