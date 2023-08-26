@@ -26,6 +26,19 @@ double funcButtonSizeConverter(ButtonSize buttonSize) {
   }
 }
 
+double funcLoadingSizeConverter(ButtonSize buttonSize) {
+  switch (buttonSize) {
+    case ButtonSize.fullWidth:
+      return StandardFontSize.h3;
+    case ButtonSize.large:
+      return StandardFontSize.h4;
+    case ButtonSize.medium:
+      return StandardFontSize.h5;
+    case ButtonSize.small:
+      return StandardFontSize.h6;
+  }
+}
+
 double funcFontSizeConverter(ButtonSize buttonSize){
   switch (buttonSize) {
     case ButtonSize.fullWidth:
@@ -87,8 +100,11 @@ class StandardButton {
               )
             ),
             child: isLoading ? loadingChildContainer(
-              loadingWidget: loadingWidget ?? CircularProgressIndicator(
-                color: loadingColor,
+              loadingWidget: loadingWidget ?? SizedBox(
+                height: funcLoadingSizeConverter(buttonSize ?? ButtonSize.fullWidth),
+                child:  CircularProgressIndicator(
+                  color: loadingColor,
+                ),
               )
             ) : childContainerWidget(
               iconPosition: iconPosition ?? IconPosition.left,
