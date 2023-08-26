@@ -18,11 +18,11 @@ double funcButtonSizeConverter(ButtonSize buttonSize) {
     case ButtonSize.fullWidth:
       return Get.width;
     case ButtonSize.large:
-      return Get.width / 0.75;
+      return Get.width * 0.75;
     case ButtonSize.medium:
-      return Get.width / 0.50;
+      return Get.width * 0.50;
     case ButtonSize.small:
-      return Get.width / 0.25;
+      return Get.width * 0.25;
   }
 }
 
