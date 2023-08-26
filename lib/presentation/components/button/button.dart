@@ -61,42 +61,44 @@ class StandardButton {
     IconPosition? iconPosition,
     Widget? icon
   }) {
-    return Material(
-      color: isDisabled
-          ? disabledBackgroundColor ?? ColorTheme.grey700
-          : backgroundColor ?? ColorTheme.primary700,
-      elevation: elevation ?? 1,
-      borderRadius: BorderRadius.circular(borderRadius ?? 12),
-      child: InkWell(
-        splashColor: isDisabled ? Colors.transparent : splashColor ?? ColorTheme.white,
+    return Padding(
+      padding : margin ?? const EdgeInsets.symmetric(vertical: 4),
+      child: Material(
+        color: isDisabled
+            ? disabledBackgroundColor ?? ColorTheme.grey700
+            : backgroundColor ?? ColorTheme.primary700,
+        elevation: elevation ?? 1,
         borderRadius: BorderRadius.circular(borderRadius ?? 12),
-        onTap: onTap,
-        child: Container(
-          alignment: Alignment.center,
-          margin : margin ?? const EdgeInsets.symmetric(vertical: 4),
-          width: funcButtonSizeConverter(buttonSize ?? ButtonSize.fullWidth),
-          padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(borderRadius ?? 12),
-            border: Border.all(
-                color: isDisabled
-                    ? disabledBorderColor ?? ColorTheme.black
-                    : borderColor ?? ColorTheme.primary500
+        child: InkWell(
+          splashColor: isDisabled ? Colors.transparent : splashColor ?? ColorTheme.white,
+          borderRadius: BorderRadius.circular(borderRadius ?? 12),
+          onTap: onTap,
+          child: Container(
+            alignment: Alignment.center,
+            width: funcButtonSizeConverter(buttonSize ?? ButtonSize.fullWidth),
+            padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(borderRadius ?? 12),
+              border: Border.all(
+                  color: isDisabled
+                      ? disabledBorderColor ?? ColorTheme.black
+                      : borderColor ?? ColorTheme.primary500
+              )
+            ),
+            child: isLoading ? loadingChildContainer(
+              loadingColor: loadingColor ?? ColorTheme.primary500
+            ) : childContainerWidget(
+              iconPosition: iconPosition ?? IconPosition.left,
+              body: standardHeaderText(
+                  fontSize: funcFontSizeConverter(buttonSize ?? ButtonSize.fullWidth),
+                  text: title,
+                  color: isDisabled
+                      ? disabledTitleColor ?? ColorTheme.black
+                      : titleColor ?? ColorTheme.black
+              ),
+              icon: icon
             )
           ),
-          child: isLoading ? loadingChildContainer(
-            loadingColor: loadingColor ?? ColorTheme.primary500
-          ) : childContainerWidget(
-            iconPosition: iconPosition ?? IconPosition.left,
-            body: standardHeaderText(
-                fontSize: funcFontSizeConverter(buttonSize ?? ButtonSize.fullWidth),
-                text: title,
-                color: isDisabled
-                    ? disabledTitleColor ?? ColorTheme.black
-                    : titleColor ?? ColorTheme.black
-            ),
-            icon: icon
-          )
         ),
       ),
     );
