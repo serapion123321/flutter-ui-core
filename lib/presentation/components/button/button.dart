@@ -42,6 +42,7 @@ double funcFontSizeConverter(ButtonSize buttonSize){
 class StandardButton {
   Widget primaryButton({
     required title,
+    EdgeInsets? margin,
     ButtonSize? buttonSize,
     double? borderRadius,
     double? elevation,
@@ -72,6 +73,7 @@ class StandardButton {
         onTap: onTap,
         child: Container(
           alignment: Alignment.center,
+          margin : margin ?? const EdgeInsets.symmetric(vertical: 4),
           width: funcButtonSizeConverter(buttonSize ?? ButtonSize.fullWidth),
           padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
           decoration: BoxDecoration(
