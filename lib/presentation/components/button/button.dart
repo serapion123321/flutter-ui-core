@@ -57,9 +57,10 @@ class StandardButton {
     Color? borderColor,
     Color? disabledBorderColor,
     Color? loadingColor,
+    Widget? loadingWidget,
     Function()? onTap,
     IconPosition? iconPosition,
-    Widget? icon
+    Widget? iconWidget
   }) {
     return Padding(
       padding : margin ?? const EdgeInsets.symmetric(vertical: 4),
@@ -86,7 +87,9 @@ class StandardButton {
               )
             ),
             child: isLoading ? loadingChildContainer(
-              loadingColor: loadingColor ?? ColorTheme.primary500
+              loadingWidget: loadingWidget ?? CircularProgressIndicator(
+                color: loadingColor,
+              )
             ) : childContainerWidget(
               iconPosition: iconPosition ?? IconPosition.left,
               body: standardHeaderText(
@@ -96,7 +99,7 @@ class StandardButton {
                       ? disabledTitleColor ?? ColorTheme.black
                       : titleColor ?? ColorTheme.black
               ),
-              icon: icon
+              icon: iconWidget
             )
           ),
         ),
@@ -133,10 +136,8 @@ class StandardButton {
   }
 
   Widget loadingChildContainer({
-  required Color? loadingColor,
+  required Widget loadingWidget,
   }){
-    return CircularProgressIndicator(
-      color: loadingColor,
-    );
+    return loadingWidget;
   }
 }
