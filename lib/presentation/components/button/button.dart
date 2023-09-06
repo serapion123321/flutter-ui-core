@@ -27,6 +27,7 @@ double funcButtonSizeConverter(ButtonSize buttonSize) {
 }
 
 double funcLoadingSizeConverter(ButtonSize buttonSize) {
+  /// Default loading indicator size will follow text size
   switch (buttonSize) {
     case ButtonSize.fullWidth:
       return StandardFontSize.h3;
