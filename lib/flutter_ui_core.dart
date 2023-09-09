@@ -50,15 +50,15 @@ class InitialValue{
     Color? primary800,
     Color? primary900,
   }){
-    ColorTheme.primary100 =  primary100 ?? const Color(0xfffff2e3);
-    ColorTheme.primary200 =  primary200 ?? const Color(0xffffd9aa);
-    ColorTheme.primary300 =  primary300 ?? const Color(0xffffbf71);
-    ColorTheme.primary400 =  primary400 ?? const Color(0xffffa639);
-    ColorTheme.primary500 =  primary500 ?? const Color(0xffff8c00);
-    ColorTheme.primary600 =  primary600 ?? const Color(0xffc66d00);
-    ColorTheme.primary700 =  primary700 ?? const Color(0xff8e4e00);
-    ColorTheme.primary800 =  primary800 ?? const Color(0xff552f00);
-    ColorTheme.primary900 =  primary900 ?? const Color(0xff1c1000);
+    ColorTheme.primary100 =  primary100 ?? const Color(0xffe4effe);
+    ColorTheme.primary200 =  primary200 ?? const Color(0xffadcefc);
+    ColorTheme.primary300 =  primary300 ?? const Color(0xff76aefa);
+    ColorTheme.primary400 =  primary400 ?? const Color(0xff408ef8);
+    ColorTheme.primary500 =  primary500 ?? const Color(0xff096df6);
+    ColorTheme.primary600 =  primary600 ?? const Color(0xff0755bf);
+    ColorTheme.primary700 =  primary700 ?? const Color(0xff053d89);
+    ColorTheme.primary800 =  primary800 ?? const Color(0xff032452);
+    ColorTheme.primary900 =  primary900 ?? const Color(0xff010c1b);
   }
 
   static setSecondaryColor({
@@ -72,15 +72,15 @@ class InitialValue{
     Color? secondary800,
     Color? secondary900,
   }){
-    ColorTheme.secondary100 =  secondary100 ?? const Color(0xffe5e9fc);
-    ColorTheme.secondary200 =  secondary200 ?? const Color(0xffb2bcf7);
-    ColorTheme.secondary300 =  secondary300 ?? const Color(0xff7e90f2);
-    ColorTheme.secondary400 =  secondary400 ?? const Color(0xff4b63ed);
-    ColorTheme.secondary500 =  secondary500 ?? const Color(0xff1736e8);
-    ColorTheme.secondary600 =  secondary600 ?? const Color(0xff122ab4);
-    ColorTheme.secondary700 =  secondary700 ?? const Color(0xff0d1e81);
-    ColorTheme.secondary800 =  secondary800 ?? const Color(0xff08124d);
-    ColorTheme.secondary900 =  secondary900 ?? const Color(0xff03061a);
+    ColorTheme.secondary100 =  secondary100 ?? const Color(0xfffbefe6);
+    ColorTheme.secondary200 =  secondary200 ?? const Color(0xfff4cfb5);
+    ColorTheme.secondary300 =  secondary300 ?? const Color(0xffedae84);
+    ColorTheme.secondary400 =  secondary400 ?? const Color(0xffe58e52);
+    ColorTheme.secondary500 =  secondary500 ?? const Color(0xffde6e21);
+    ColorTheme.secondary600 =  secondary600 ?? const Color(0xffad551a);
+    ColorTheme.secondary700 =  secondary700 ?? const Color(0xff7b3d12);
+    ColorTheme.secondary800 =  secondary800 ?? const Color(0xff4a250b);
+    ColorTheme.secondary900 =  secondary900 ?? const Color(0xff190c04);
   }
 
   static setSuccessColor({
