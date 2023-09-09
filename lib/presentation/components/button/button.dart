@@ -196,6 +196,30 @@ class StandardButton {
     );
   }
 
+  Widget tertiaryButton({
+    required title,
+    EdgeInsets? margin,
+    bool isLoading = false,
+    bool isDisabled = false,
+    Color? titleColor,
+    Color? disabledTitleColor,
+    Function()? onTap,
+  }) {
+    return Padding(
+      padding : margin ?? const EdgeInsets.symmetric(vertical: 4),
+      child: GestureDetector(
+        onTap: isLoading || isDisabled ? (){} : onTap,
+        child: standardHeaderText(
+            fontSize: StandardFontSize.h6,
+            text: title,
+            color: isDisabled || isLoading
+                ? disabledTitleColor ?? ColorTheme.grey700
+                : titleColor ?? ColorTheme.black
+        ),
+      ),
+    );
+  }
+
   Widget childContainerWidget({
   required IconPosition iconPosition,
   required Widget body,
