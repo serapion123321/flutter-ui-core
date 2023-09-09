@@ -87,7 +87,7 @@ class StandardButton {
         child: InkWell(
           splashColor: isDisabled ? Colors.transparent : splashColor ?? ColorTheme.white,
           borderRadius: BorderRadius.circular(borderRadius ?? 12),
-          onTap: !isLoading || !isDisabled ? onTap : (){},
+          onTap: isLoading || isDisabled ? (){} : onTap,
           child: Container(
             alignment: Alignment.center,
             width: funcButtonSizeConverter(buttonSize ?? ButtonSize.fullWidth),
