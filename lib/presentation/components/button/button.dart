@@ -156,7 +156,7 @@ class StandardButton {
         elevation: elevation ?? 1,
         borderRadius: BorderRadius.circular(borderRadius ?? 12),
         child: InkWell(
-          splashColor: isDisabled ? Colors.transparent : splashColor ?? ColorTheme.white,
+          splashColor: isDisabled ? Colors.transparent : splashColor ?? ColorTheme.primary500,
           borderRadius: BorderRadius.circular(borderRadius ?? 12),
           onTap: isLoading || isDisabled ? (){} : onTap,
           child: Container(
