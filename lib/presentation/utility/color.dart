@@ -7,26 +7,26 @@ class ColorTheme{
   static Color black =  const Color(0xFF000000);
 
   /// Primary Color
-  static Color primary100 =  const Color(0xfffff2e3);
-  static Color primary200 =  const Color(0xffffd9aa);
-  static Color primary300 =  const Color(0xffffbf71);
-  static Color primary400 =  const Color(0xffffa639);
-  static Color primary500 =  const Color(0xffff8c00);
-  static Color primary600 =  const Color(0xffc66d00);
-  static Color primary700 =  const Color(0xff8e4e00);
-  static Color primary800 =  const Color(0xff552f00);
-  static Color primary900 =  const Color(0xff1c1000);
+  static Color primary100 =  const Color(0xffe4effe);
+  static Color primary200 =  const Color(0xffadcefc);
+  static Color primary300 =  const Color(0xff76aefa);
+  static Color primary400 =  const Color(0xff408ef8);
+  static Color primary500 =  const Color(0xff096df6);
+  static Color primary600 =  const Color(0xff0755bf);
+  static Color primary700 =  const Color(0xff053d89);
+  static Color primary800 =  const Color(0xff032452);
+  static Color primary900 =  const Color(0xff010c1b);
 
   /// Secondary
-  static Color secondary100 =  const Color(0xffe5e9fc);
-  static Color secondary200 =  const Color(0xffb2bcf7);
-  static Color secondary300 =  const Color(0xff7e90f2);
-  static Color secondary400 =  const Color(0xff4b63ed);
-  static Color secondary500 =  const Color(0xff1736e8);
-  static Color secondary600 =  const Color(0xff122ab4);
-  static Color secondary700 =  const Color(0xff0d1e81);
-  static Color secondary800 =  const Color(0xff08124d);
-  static Color secondary900 =  const Color(0xff03061a);
+  static Color secondary100 =  const Color(0xfffbefe6);
+  static Color secondary200 =  const Color(0xfff4cfb5);
+  static Color secondary300 =  const Color(0xffedae84);
+  static Color secondary400 =  const Color(0xffe58e52);
+  static Color secondary500 =  const Color(0xffde6e21);
+  static Color secondary600 =  const Color(0xffad551a);
+  static Color secondary700 =  const Color(0xff7b3d12);
+  static Color secondary800 =  const Color(0xff4a250b);
+  static Color secondary900 =  const Color(0xff190c04);
 
   /// Success Color
   static Color success100 =  const Color(0xffecfee3);

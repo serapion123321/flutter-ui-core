@@ -54,6 +54,7 @@ class HeaderTextStyle {
 
 Widget standardBodyText({
   required text,
+  EdgeInsets? margin,
   Color? color,
   double? fontSize,
   FontWeight? fontWeight,
@@ -61,20 +62,24 @@ Widget standardBodyText({
   int? maxLines,
   TextAlign? textAlign,
 }) {
-  return Text(
-    text,
-    style: BodyTextStyle.textStyle(
-        color: color,
-        fontWeight: fontWeight,
-        fontSize: fontSize),
-    overflow: textOverflow,
-    maxLines: maxLines,
-    textAlign: textAlign,
+  return Container(
+    margin: margin ?? EdgeInsets.zero,
+    child: Text(
+      text,
+      style: BodyTextStyle.textStyle(
+          color: color,
+          fontWeight: fontWeight,
+          fontSize: fontSize),
+      overflow: textOverflow,
+      maxLines: maxLines,
+      textAlign: textAlign,
+    ),
   );
 }
 
 Widget standardHeaderText({
   required text,
+  EdgeInsets? margin,
   Color? color,
   double? fontSize,
   FontWeight? fontWeight,
@@ -82,14 +87,17 @@ Widget standardHeaderText({
   int? maxLines,
   TextAlign? textAlign,
 }) {
-  return Text(
-    text,
-    style: HeaderTextStyle.textStyle(
-        color: color,
-        fontWeight: fontWeight,
-        fontSize: fontSize),
-    overflow: textOverflow,
-    maxLines: maxLines,
-    textAlign: textAlign,
+  return Container(
+    margin: margin ?? EdgeInsets.zero,
+    child: Text(
+      text,
+      style: HeaderTextStyle.textStyle(
+          color: color,
+          fontWeight: fontWeight,
+          fontSize: fontSize),
+      overflow: textOverflow,
+      maxLines: maxLines,
+      textAlign: textAlign,
+    ),
   );
 }
