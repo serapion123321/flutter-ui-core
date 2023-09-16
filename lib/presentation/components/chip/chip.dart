@@ -75,15 +75,18 @@ class StandardChip {
               child: childChipWidget(
                 iconCloseWidget: isUsingCloseIcon
                     ? iconCloseWidget ??
-                        GestureDetector(
+                      Container(
+                        margin: const EdgeInsets.only(left: 8),
+                        child: GestureDetector(
                           onTap: onTapClose,
                           child: Icon(Icons.close,
-                              color: isDisabled
-                                  ? ColorTheme.grey500
-                                  : ColorTheme.danger500,
+                            color: isDisabled
+                                ? ColorTheme.grey500
+                                : ColorTheme.danger500,
                             size: funcIconCloseConverter(chipSize ?? ChipSize.medium),
                           ),
-                        )
+                        ),
+                      )
                     : const SizedBox(),
                 body: standardHeaderText(
                     fontSize:
