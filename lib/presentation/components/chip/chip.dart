@@ -81,7 +81,7 @@ class StandardChip {
                           onTap: onTapClose,
                           child: Icon(Icons.close,
                             color: isDisabled
-                                ? ColorTheme.grey500
+                                ? ColorTheme.black
                                 : ColorTheme.danger500,
                             size: funcIconCloseConverter(chipSize ?? ChipSize.medium),
                           ),
