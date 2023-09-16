@@ -54,7 +54,7 @@ class StandardChip {
           onTap: isDisabled ? () {} : onTap,
           child: Container(
               alignment: Alignment.center,
-              padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 4),
+              padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(borderRadius ?? 12),
                   border: Border.all(
