@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_core/presentation/utility/utility.dart';
 
-enum ChipSize{
+enum ChipSize {
   large,
   medium,
   small,
 }
 
-double funcFontSizeConverter(ChipSize buttonSize){
+double funcFontSizeConverter(ChipSize buttonSize) {
   switch (buttonSize) {
     case ChipSize.large:
       return StandardFontSize.h4;
@@ -18,31 +18,29 @@ double funcFontSizeConverter(ChipSize buttonSize){
   }
 }
 
-
 class StandardChip {
-  Widget chip({
-    required String title,
-    EdgeInsets? margin,
-    ChipSize? chipSize,
-    double? borderRadius,
-    double? elevation,
-    bool isDisabled = false,
-    bool isUsingCloseIcon = false,
-    Color? backgroundColor,
-    Color? disabledBackgroundColor,
-    Color? titleColor,
-    Color? disabledTitleColor,
-    Color? splashColor,
-    Color? disabledSplashColor,
-    Color? borderColor,
-    Color? disabledBorderColor,
-    Function()? onTap,
-    Function()? onTapClose,
-    Widget? iconWidget,
-    Widget iconCloseWidget = const SizedBox()
-  }){
+  Widget chip(
+      {required String title,
+      EdgeInsets? margin,
+      ChipSize? chipSize,
+      double? borderRadius,
+      double? elevation,
+      bool isDisabled = false,
+      bool isUsingCloseIcon = false,
+      Color? backgroundColor,
+      Color? disabledBackgroundColor,
+      Color? titleColor,
+      Color? disabledTitleColor,
+      Color? splashColor,
+      Color? disabledSplashColor,
+      Color? borderColor,
+      Color? disabledBorderColor,
+      Function()? onTap,
+      Function()? onTapClose,
+      Widget? iconWidget,
+      Widget? iconCloseWidget}) {
     return Padding(
-      padding : margin ?? const EdgeInsets.symmetric(vertical: 4),
+      padding: margin ?? const EdgeInsets.symmetric(vertical: 4),
       child: Material(
         color: isDisabled
             ? disabledBackgroundColor ?? ColorTheme.grey700
@@ -50,51 +48,45 @@ class StandardChip {
         elevation: elevation ?? 1,
         borderRadius: BorderRadius.circular(borderRadius ?? 12),
         child: InkWell(
-          splashColor: isDisabled ? Colors.transparent : splashColor ?? ColorTheme.white,
+          splashColor:
+              isDisabled ? Colors.transparent : splashColor ?? ColorTheme.white,
           borderRadius: BorderRadius.circular(borderRadius ?? 12),
-          onTap: isDisabled ? (){} : onTap,
+          onTap: isDisabled ? () {} : onTap,
           child: Container(
               alignment: Alignment.center,
-              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+              padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 4),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(borderRadius ?? 12),
                   border: Border.all(
                       color: isDisabled
                           ? disabledBorderColor ?? ColorTheme.black
-                          : borderColor ?? ColorTheme.primary500
-                  )
-              ),
+                          : borderColor ?? ColorTheme.primary500)),
               child: childChipWidget(
-                  iconCloseWidget: isUsingCloseIcon
-                      ? iconCloseWidget
-                      : IconButton(
+                iconCloseWidget: isUsingCloseIcon
+                    ? iconCloseWidget ??
+                        IconButton(
                           onPressed: onTapClose,
-                          icon: Icon(
-                            Icons.close,
-                            color: isDisabled
-                                ? ColorTheme.grey500
-                                : ColorTheme.danger500
-                          ),
-                  ),
-                  body: standardHeaderText(
-                      fontSize: funcFontSizeConverter(chipSize ?? ChipSize.medium),
-                      text: title,
-                      color: isDisabled
-                          ? disabledTitleColor ?? ColorTheme.black
-                          : titleColor ?? ColorTheme.black
-                  ),
-              )
-          ),
+                          icon: Icon(Icons.close,
+                              color: isDisabled
+                                  ? ColorTheme.grey500
+                                  : ColorTheme.danger500),
+                        )
+                    : const SizedBox(),
+                body: standardHeaderText(
+                    fontSize:
+                        funcFontSizeConverter(chipSize ?? ChipSize.medium),
+                    text: title,
+                    color: isDisabled
+                        ? disabledTitleColor ?? ColorTheme.black
+                        : titleColor ?? ColorTheme.black),
+              )),
         ),
       ),
     );
   }
 
-  Widget childChipWidget({
-    required Widget body,
-    required Widget iconCloseWidget,
-    Widget? icon
-  }) {
+  Widget childChipWidget(
+      {required Widget body, required Widget iconCloseWidget, Widget? icon}) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
