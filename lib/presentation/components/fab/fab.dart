@@ -33,13 +33,13 @@ class StandardFab {
           ),
       ) : childFabWidget(
           iconPosition: iconPosition ?? IconPosition.left,
-          body: standardHeaderText(
+          body: title != null ? standardHeaderText(
               fontSize: StandardFontSize.h6,
               text: title,
               color: isDisabled
                   ? disabledTitleColor ?? ColorTheme.black
                   : titleColor ?? ColorTheme.black
-          ),
+          ) : const SizedBox(),
           icon: iconWidget
       ),
     );
