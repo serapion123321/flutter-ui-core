@@ -64,9 +64,9 @@ class StandardChip {
               child: childChipWidget(
                 iconCloseWidget: isUsingCloseIcon
                     ? iconCloseWidget ??
-                        IconButton(
-                          onPressed: onTapClose,
-                          icon: Icon(Icons.close,
+                        GestureDetector(
+                          onTap: onTapClose,
+                          child: Icon(Icons.close,
                               color: isDisabled
                                   ? ColorTheme.grey500
                                   : ColorTheme.danger500),
