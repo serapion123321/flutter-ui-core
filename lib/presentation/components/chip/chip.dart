@@ -18,6 +18,17 @@ double funcFontSizeConverter(ChipSize buttonSize) {
   }
 }
 
+double funcIconCloseConverter(ChipSize buttonSize) {
+  switch (buttonSize) {
+    case ChipSize.large:
+      return 20;
+    case ChipSize.medium:
+      return 16;
+    case ChipSize.small:
+      return 12;
+  }
+}
+
 class StandardChip {
   Widget chip(
       {required String title,
@@ -69,7 +80,9 @@ class StandardChip {
                           child: Icon(Icons.close,
                               color: isDisabled
                                   ? ColorTheme.grey500
-                                  : ColorTheme.danger500),
+                                  : ColorTheme.danger500,
+                            size: funcIconCloseConverter(chipSize ?? ChipSize.medium),
+                          ),
                         )
                     : const SizedBox(),
                 body: standardHeaderText(
