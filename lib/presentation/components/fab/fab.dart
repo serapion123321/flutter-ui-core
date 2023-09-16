@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_core/presentation/core/icon_position.dart';
 import 'package:flutter_ui_core/presentation/utility/utility.dart';
 
-enum IconPosition { left, right }
 
 class StandardFab {
   FloatingActionButton fab({
