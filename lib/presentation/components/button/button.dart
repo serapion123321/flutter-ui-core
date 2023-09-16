@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_core/presentation/core/icon_position.dart';
 import 'package:flutter_ui_core/presentation/utility/utility.dart';
 import 'package:get/get.dart';
-
-enum IconPosition{
-  left, right
-}
 
 enum ButtonSize{
   fullWidth,
