@@ -41,7 +41,9 @@ class StandardForm {
               ? Container(
                   margin: const EdgeInsets.only(bottom: 4),
                   child: standardBodyText(
-                      text: labelText, color: ColorTheme.grey500),
+                      text: labelText,
+                      color: ColorTheme.grey500,
+                      fontSize: StandardFontSize.bodyTextM),
                 )
               : const SizedBox(),
           Container(
@@ -66,10 +68,10 @@ class StandardForm {
               keyboardType: keyboardType,
               inputFormatters: inputFormatters,
               decoration: InputDecoration(
-                hintStyle: hintStyle ?? BodyTextStyle.textStyle(
-                  color: ColorTheme.grey700,
-                  fontSize: StandardFontSize.bodyTextXs
-                ),
+                  hintStyle: hintStyle ??
+                      BodyTextStyle.textStyle(
+                          color: ColorTheme.grey700,
+                          fontSize: StandardFontSize.bodyTextXs),
                   hintText: hintText,
                   enabled: enabled,
                   prefixIcon: prefixIcon,
