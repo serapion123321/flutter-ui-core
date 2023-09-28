@@ -1,5 +1,4 @@
 library flutter_ui_core;
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_core/presentation/core/screen_size.dart';
 import 'package:flutter_ui_core/presentation/utility/color.dart';
