@@ -1,2 +1,2 @@
 import 'package:flutter/material.dart';
-late Size screenSize;
+Size screenSize = WidgetsBinding.instance.window.physicalSize;
