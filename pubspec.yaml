@@ -1,5 +1,5 @@
 name: flutter_ui_core
-description: A new Flutter package project.
+description: Package for simple UI.
 version: 0.0.1
 homepage:
 
@@ -8,7 +8,6 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
-  get: ^4.6.5
   flutter:
     sdk: flutter
 

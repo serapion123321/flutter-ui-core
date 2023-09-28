@@ -1,10 +1,15 @@
 library flutter_ui_core;
-import 'dart:ui';
-
+import 'package:flutter/material.dart';
+import 'package:flutter_ui_core/presentation/core/screen_size.dart';
 import 'package:flutter_ui_core/presentation/utility/color.dart';
 import 'package:flutter_ui_core/presentation/utility/typography.dart';
 
 class InitialValue{
+  static setScreenSize({
+    Size? screenSizeCustom
+  }){
+    screenSize = screenSizeCustom ?? WidgetsBinding.instance.window.physicalSize;
+  }
   static setBodyFontSize({
     double? bodyTextXxl,
     double? bodyTextXl,
