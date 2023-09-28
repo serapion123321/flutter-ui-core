@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_core/presentation/core/icon_position.dart';
+import 'package:flutter_ui_core/presentation/core/screen_size.dart';
 import 'package:flutter_ui_core/presentation/utility/utility.dart';
-import 'package:get/get.dart';
 
 enum ButtonSize{
   fullWidth,
@@ -13,13 +13,13 @@ enum ButtonSize{
 double funcButtonSizeConverter(ButtonSize buttonSize) {
   switch (buttonSize) {
     case ButtonSize.fullWidth:
-      return Get.width;
+      return screenSize.width;
     case ButtonSize.large:
-      return Get.width * 0.75;
+      return screenSize.width * 0.75;
     case ButtonSize.medium:
-      return Get.width * 0.50;
+      return screenSize.width * 0.50;
     case ButtonSize.small:
-      return Get.width * 0.25;
+      return screenSize.width * 0.25;
   }
 }
 
