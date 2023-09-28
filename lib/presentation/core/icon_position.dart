@@ -1,2 +1,1 @@
-
 enum IconPosition { left, right }
