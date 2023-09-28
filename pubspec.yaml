@@ -1,7 +1,7 @@
 name: flutter_ui_core
 description: Package for simple UI.
 version: 0.0.1
-homepage:
+homepage: https://github.com/serapion123321/flutter-ui-core
 
 environment:
   sdk: '>=2.19.6 <3.0.0'
