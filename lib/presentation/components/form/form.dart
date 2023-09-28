@@ -28,6 +28,8 @@ class StandardForm {
     final TextStyle? hintStyle,
     final Color? labelColor,
     final Color? disableLabelColor,
+    final Color? textColor,
+    final Color? disableTextColor,
     final Color? focusedColor,
     final Color? borderColor,
     final Color? errorColor,
@@ -46,8 +48,11 @@ class StandardForm {
                   margin: const EdgeInsets.only(bottom: 4),
                   child: standardBodyText(
                       text: labelText,
-                      color: ColorTheme.grey500,
-                      fontSize: StandardFontSize.bodyTextM),
+                      color: enabled == true
+                          ? labelColor ?? ColorTheme.black
+                          : disableLabelColor ?? ColorTheme.grey700,
+                      fontSize: StandardFontSize.bodyTextM
+                  ),
                 )
               : const SizedBox(),
           Container(
@@ -59,8 +64,8 @@ class StandardForm {
               initialValue: initialValue,
               style: TextStyle(
                   color: enabled == true
-                      ? labelColor ?? ColorTheme.black
-                      : disableLabelColor ?? ColorTheme.grey700),
+                      ? textColor ?? ColorTheme.black
+                      : disableTextColor ?? ColorTheme.grey700),
               cursorColor: ColorTheme.grey300,
               enabled: enabled,
               obscureText: obscureText,
