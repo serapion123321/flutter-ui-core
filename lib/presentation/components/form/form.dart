@@ -28,6 +28,7 @@ class StandardForm {
     final TextStyle? hintStyle,
     final Color? labelColor,
     final Color? disableLabelColor,
+    final Color? focusColor,
   }) {
     return Container(
       margin: margin,
@@ -68,9 +69,22 @@ class StandardForm {
               keyboardType: keyboardType,
               inputFormatters: inputFormatters,
               decoration: InputDecoration(
+                focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide(color: ColorTheme.primary500)),
+                  errorBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: BorderSide(color: ColorTheme.danger500)),
+                  disabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: BorderSide(color: ColorTheme.grey500)),
+                  enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: BorderSide(color: ColorTheme.primary500)),
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                       borderSide: BorderSide(color: ColorTheme.primary500)),
+                  focusColor: focusColor,
                   hintStyle: hintStyle ??
                       BodyTextStyle.textStyle(
                           color: ColorTheme.grey700,
