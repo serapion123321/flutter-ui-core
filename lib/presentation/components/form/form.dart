@@ -68,6 +68,9 @@ class StandardForm {
               keyboardType: keyboardType,
               inputFormatters: inputFormatters,
               decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: BorderSide(color: ColorTheme.primary500)),
                   hintStyle: hintStyle ??
                       BodyTextStyle.textStyle(
                           color: ColorTheme.grey700,
