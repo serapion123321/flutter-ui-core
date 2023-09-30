@@ -43,7 +43,6 @@ class StandardChip {
       Color? titleColor,
       Color? disabledTitleColor,
       Color? splashColor,
-      Color? disabledSplashColor,
       Color? borderColor,
       Color? disabledBorderColor,
       Function()? onTap,
@@ -73,6 +72,7 @@ class StandardChip {
                           ? disabledBorderColor ?? ColorTheme.black
                           : borderColor ?? ColorTheme.primary500)),
               child: childChipWidget(
+                icon: iconWidget,
                 iconCloseWidget: isUsingCloseIcon
                     ? iconCloseWidget ??
                       Container(
