@@ -587,7 +587,7 @@ class ChipByIconWidget extends StatelessWidget {
                 title: "custom icon",
                 isUsingCloseIcon: true,
                 iconCloseWidget: Container(
-                    margin: EdgeInsets.only(left: 4),
+                    margin: const EdgeInsets.only(left: 4),
                     child: GestureDetector(
                         onTap: () {
                           debugPrint("close");
