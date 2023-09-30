@@ -38,7 +38,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
 
   @override
   void initState() {
@@ -49,17 +48,17 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   /// Uncomment this to change body font size
-  void setInitialBodyFontSize(){
-    InitialValue.setBodyFontSize(
-        bodyTextXxl: 64,
-        bodyTextXl: 24,
-        bodyTextL: 52,
-        bodyTextM: 48,
-        bodyTextS: 40,
-        bodyTextXs: 38,
-        bodyTextXxs: 24
-    );
-  }
+  // void setInitialBodyFontSize(){
+  //   InitialValue.setBodyFontSize(
+  //       bodyTextXxl: 64,
+  //       bodyTextXl: 24,
+  //       bodyTextL: 52,
+  //       bodyTextM: 48,
+  //       bodyTextS: 40,
+  //       bodyTextXs: 38,
+  //       bodyTextXxs: 24
+  //   );
+  // }
 
   void setScreenSize(){
     InitialValue.setScreenSize(
@@ -71,12 +70,6 @@ class _MyHomePageState extends State<MyHomePage> {
     InitialValue.setPrimaryColor(
         primary500: const Color(0xff00e9ff),
         primary700: const Color(0xff7FFFD4));
-  }
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
   }
 
   @override
@@ -620,7 +613,7 @@ class FormBasic extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // margin: const EdgeInsets.symmetric(vertical: 8),
+      margin: const EdgeInsets.symmetric(vertical: 8),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
