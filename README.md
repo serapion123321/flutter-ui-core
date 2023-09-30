@@ -14,6 +14,7 @@
     - FAB
     - Form
 - To Do / Roadmap
+- Information
 
 ## Description
 
@@ -248,8 +249,12 @@ for the default size is bodyTextS and color is ColorTheme.black
 | disabledColor| ColorTheme.grey500
 | borderColor| ColorTheme.black
 
-## Additional information
+## To Do / Roadmap
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+- [ ] More Type of Form
+- [ ] Card Components
+- [ ] Avatar
+
+## Information
+
+[Github Repo](https://github.com/serapion123321/flutter-ui-core)
